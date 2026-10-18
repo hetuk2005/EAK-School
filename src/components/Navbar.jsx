@@ -1,38 +1,98 @@
-import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
-import React, { useState, useEffect } from 'react';
-import { Phone, Mail, Calendar, Menu, X, FileText, ChevronRight, GraduationCap, Sparkles, } from 'lucide-react';
+import { useState } from 'react';
+import { Calendar, ChevronRight, GraduationCap, Menu, Phone, Sparkles, X } from 'lucide-react';
 import { SCHOOL_INFO } from '../data/schoolData';
+
+const navLinks = [
+  { name: 'Why EAK', href: '#why-us' },
+  { name: 'Academics', href: '#academics' },
+  { name: 'Campus', href: '#facilities' },
+  { name: 'Admissions', href: '#process' },
+  { name: 'Key Dates', href: '#dates' },
+  { name: 'Fees', href: '#fees' },
+  { name: 'Stories', href: '#testimonials' },
+  { name: 'FAQs', href: '#faqs' },
+];
+
 export const Navbar = ({ onOpenEnquiry, onOpenVisit }) => {
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 20);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-    const navLinks = [
-        { name: 'Why EAK', href: '#why-us' },
-        { name: 'Academics', href: '#academics' },
-        { name: 'Highlights', href: '#highlights' },
-        { name: 'Facilities', href: '#facilities' },
-        { name: 'Admission Flow', href: '#process' },
-        { name: 'Key Dates', href: '#dates' },
-        { name: 'Documents', href: '#documents' },
-        { name: 'Fee Structure', href: '#fees' },
-        { name: 'Testimonials', href: '#testimonials' },
-        { name: 'FAQs', href: '#faqs' },
-    ];
-    return (_jsxs(_Fragment, { children: [_jsx("div", { className: "bg-slate-900 text-slate-200 text-xs py-2 px-4 border-b border-slate-800", children: _jsxs("div", { className: "max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3", children: [_jsxs("div", { className: "flex items-center gap-2", children: [_jsxs("span", { className: "inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 font-semibold text-[11px] border border-amber-500/30", children: [_jsx(Sparkles, { className: "w-3 h-3 text-amber-400" }), "Session 2027\u201328"] }), _jsx("span", { className: "hidden sm:inline text-slate-300 font-medium", children: "Admissions Open for Grades 1 through 12 | Early Bird Assistance Open" })] }), _jsxs("div", { className: "flex items-center gap-4 text-[11px] sm:text-xs", children: [_jsxs("a", { href: `tel:${SCHOOL_INFO.admissionsHotline}`, className: "flex items-center gap-1.5 hover:text-amber-400 transition-colors", children: [_jsx(Phone, { className: "w-3.5 h-3.5 text-amber-400" }), _jsx("span", { className: "font-medium hidden md:inline", children: "Hotline:" }), " ", SCHOOL_INFO.admissionsHotline] }), _jsx("span", { className: "text-slate-700 hidden sm:inline", children: "|" }), _jsxs("a", { href: `mailto:${SCHOOL_INFO.email}`, className: "hidden lg:flex items-center gap-1.5 hover:text-amber-400 transition-colors", children: [_jsx(Mail, { className: "w-3.5 h-3.5 text-amber-400" }), _jsx("span", { children: SCHOOL_INFO.email })] }), _jsx("span", { className: "text-slate-700 hidden lg:inline", children: "|" }), _jsxs("button", { onClick: () => {
-                                        window.print();
-                                    }, className: "hidden sm:flex items-center gap-1 text-slate-300 hover:text-amber-300 transition-colors font-medium", title: "Print or Save Page as PDF", children: [_jsx(FileText, { className: "w-3.5 h-3.5" }), _jsx("span", { children: "Print Prospectus" })] })] })] }) }), _jsxs("header", { className: `sticky top-0 z-40 transition-all duration-300 ${isScrolled
-                    ? 'bg-white/95 backdrop-blur-md shadow-md py-3'
-                    : 'bg-white border-b border-slate-100 py-4'}`, children: [_jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between", children: [_jsxs("a", { href: "#", className: "flex items-center gap-3 group", children: [_jsx("div", { className: "w-11 h-11 rounded-xl bg-gradient-to-tr from-blue-900 via-indigo-900 to-blue-700 flex items-center justify-center text-white shadow-md shadow-blue-900/20 group-hover:scale-105 transition-transform", children: _jsx(GraduationCap, { className: "w-6 h-6 text-amber-400" }) }), _jsxs("div", { children: [_jsxs("div", { className: "flex items-center gap-2", children: [_jsx("span", { className: "font-extrabold text-xl tracking-tight text-slate-900 font-serif", children: "EAK" }), _jsx("span", { className: "text-xs px-2 py-0.5 rounded bg-blue-50 text-blue-800 font-bold tracking-wider uppercase border border-blue-200", children: "International School" })] }), _jsx("p", { className: "text-[11px] text-slate-500 font-medium tracking-wide", children: "Excellence \u2022 Integrity \u2022 Innovation" })] })] }), _jsx("nav", { className: "hidden xl:flex items-center gap-1 text-sm font-semibold text-slate-700", children: navLinks.map((link) => (_jsx("a", { href: link.href, className: "px-2.5 py-1.5 rounded-lg hover:text-blue-700 hover:bg-blue-50/80 transition-colors", children: link.name }, link.name))) }), _jsxs("div", { className: "hidden sm:flex items-center gap-3", children: [_jsxs("button", { onClick: onOpenVisit, className: "inline-flex items-center gap-2 px-3.5 py-2 text-xs md:text-sm font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg border border-slate-300/80 transition-all shadow-xs", children: [_jsx(Calendar, { className: "w-4 h-4 text-slate-600" }), _jsx("span", { children: "Campus Visit" })] }), _jsxs("button", { onClick: onOpenEnquiry, className: "inline-flex items-center gap-1.5 px-4 py-2 text-xs md:text-sm font-bold text-white bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-800 hover:from-blue-800 hover:to-indigo-900 rounded-lg shadow-md shadow-blue-700/25 hover:shadow-lg transition-all", children: [_jsx("span", { children: "Enquire Now" }), _jsx(ChevronRight, { className: "w-4 h-4" })] })] }), _jsxs("div", { className: "flex items-center gap-2 sm:hidden", children: [_jsx("button", { onClick: onOpenEnquiry, className: "px-3 py-1.5 text-xs font-bold text-white bg-blue-700 rounded-lg", children: "Enquire" }), _jsx("button", { onClick: () => setMobileMenuOpen(!mobileMenuOpen), className: "p-2 rounded-lg text-slate-700 hover:bg-slate-100 focus:outline-none", "aria-label": "Toggle menu", children: mobileMenuOpen ? _jsx(X, { className: "w-6 h-6" }) : _jsx(Menu, { className: "w-6 h-6" }) })] })] }), mobileMenuOpen && (_jsxs("div", { className: "xl:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 shadow-xl animate-fadeIn", children: [_jsx("div", { className: "grid grid-cols-2 gap-2 mb-4 text-sm font-medium", children: navLinks.map((link) => (_jsx("a", { href: link.href, onClick: () => setMobileMenuOpen(false), className: "px-3 py-2 rounded-md hover:bg-blue-50 text-slate-800 hover:text-blue-700 transition-colors", children: link.name }, link.name))) }), _jsxs("div", { className: "flex flex-col gap-2 pt-3 border-t border-slate-100", children: [_jsxs("button", { onClick: () => {
-                                            setMobileMenuOpen(false);
-                                            onOpenVisit();
-                                        }, className: "w-full py-2.5 px-4 rounded-lg border border-slate-300 font-semibold text-slate-800 flex items-center justify-center gap-2 hover:bg-slate-50", children: [_jsx(Calendar, { className: "w-4 h-4 text-blue-700" }), _jsx("span", { children: "Schedule a Campus Tour" })] }), _jsxs("button", { onClick: () => {
-                                            setMobileMenuOpen(false);
-                                            onOpenEnquiry();
-                                        }, className: "w-full py-2.5 px-4 rounded-lg bg-blue-700 text-white font-bold flex items-center justify-center gap-2 shadow-md hover:bg-blue-800", children: [_jsx("span", { children: "Apply / Enquire for 2027\u201328" }), _jsx(ChevronRight, { className: "w-4 h-4" })] })] })] }))] })] }));
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const closeMenu = () => setMobileMenuOpen(false);
+
+  return (
+    <>
+      <div className="bg-slate-900 text-slate-200">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2 sm:px-6 lg:px-8">
+          <div className="flex min-w-0 items-center gap-3">
+            <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-amber-500/30 bg-amber-500/15 px-2.5 py-1 text-[11px] font-semibold text-amber-300">
+              <Sparkles className="h-3 w-3" /> Admissions 2027–28
+            </span>
+            <span className="hidden truncate text-xs text-slate-300 md:inline">Now welcoming applications for Grades 1–12</span>
+          </div>
+          <a href={`tel:${SCHOOL_INFO.admissionsHotline}`} className="inline-flex shrink-0 items-center gap-2 text-xs font-medium transition-colors hover:text-amber-300 sm:text-sm">
+            <Phone className="h-3.5 w-3.5 text-amber-400" />
+            <span className="hidden sm:inline">Admissions</span> {SCHOOL_INFO.admissionsHotline}
+          </a>
+        </div>
+      </div>
+
+      <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur-md">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+          <a href="#" className="group flex min-w-0 items-center gap-3" aria-label="EAK International School home">
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-900 to-indigo-700 text-white shadow-md shadow-blue-900/20 transition-transform group-hover:scale-105">
+              <GraduationCap className="h-7 w-7 text-amber-400" />
+            </span>
+            <span className="min-w-0">
+              <span className="flex flex-wrap items-baseline gap-x-2">
+                <span className="font-serif text-2xl font-extrabold tracking-tight text-slate-900">EAK</span>
+                <span className="text-xs font-bold uppercase tracking-wider text-blue-800 sm:text-sm">International School</span>
+              </span>
+              <span className="hidden text-[11px] font-medium tracking-wide text-slate-500 sm:block">Excellence · Integrity · Innovation</span>
+            </span>
+          </a>
+
+          <div className="hidden items-center gap-3 md:flex">
+            <button onClick={onOpenVisit} className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 transition-colors hover:border-blue-200 hover:bg-blue-50">
+              <Calendar className="h-4 w-4 text-blue-700" /> Visit Campus
+            </button>
+            <button onClick={onOpenEnquiry} className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-700 to-indigo-700 px-4 py-2.5 text-sm font-bold text-white shadow-md shadow-blue-700/20 transition hover:from-blue-800 hover:to-indigo-900">
+              Enquire Now <ChevronRight className="h-4 w-4" />
+            </button>
+          </div>
+
+          <div className="flex items-center gap-2 md:hidden">
+            <button onClick={onOpenEnquiry} className="rounded-lg bg-blue-700 px-3 py-2 text-xs font-bold text-white sm:text-sm">Enquire</button>
+            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="rounded-lg p-2 text-slate-700 hover:bg-slate-100" aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'} aria-expanded={mobileMenuOpen}>
+              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
+        </div>
+
+        <nav aria-label="Main navigation" className="hidden border-t border-slate-100 md:block">
+          <div className="mx-auto flex max-w-7xl items-center justify-between gap-1 px-4 py-2 sm:px-6 lg:px-8">
+            {navLinks.map((link) => (
+              <a key={link.name} href={link.href} className="rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition-colors hover:bg-blue-50 hover:text-blue-800">{link.name}</a>
+            ))}
+          </div>
+        </nav>
+
+        {mobileMenuOpen && (
+          <div className="border-t border-slate-200 bg-white px-4 pb-5 pt-3 shadow-xl md:hidden">
+            <nav aria-label="Mobile navigation" className="grid grid-cols-2 gap-1.5">
+              {navLinks.map((link) => (
+                <a key={link.name} href={link.href} onClick={closeMenu} className="rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-blue-50 hover:text-blue-800">{link.name}</a>
+              ))}
+            </nav>
+            <div className="mt-3 flex flex-col gap-2 border-t border-slate-100 pt-3">
+              <button onClick={() => { closeMenu(); onOpenVisit(); }} className="flex w-full items-center justify-center gap-2 rounded-lg border border-slate-300 py-2.5 font-semibold text-slate-800 hover:bg-slate-50">
+                <Calendar className="h-4 w-4 text-blue-700" /> Schedule a Campus Visit
+              </button>
+              <button onClick={() => { closeMenu(); onOpenEnquiry(); }} className="flex w-full items-center justify-center gap-2 rounded-lg bg-blue-700 py-2.5 font-bold text-white shadow-md hover:bg-blue-800">
+                Apply / Enquire for 2027–28 <ChevronRight className="h-4 w-4" />
+              </button>
+            </div>
+          </div>
+        )}
+      </header>
+    </>
+  );
 };

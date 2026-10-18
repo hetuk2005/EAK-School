@@ -11,7 +11,7 @@
 
 ## 📌 Executive Summary
 
-This project delivers a **modern, high-converting, fully responsive admissions landing page** for **EAK International School** (Academic Session 2027–28). Built strictly as a client-side frontend application using **React 19, TypeScript, Vite, and Tailwind CSS v4**, the application satisfies 100% of the project requirements across all **12 required sections** while providing fluid frontend interactions, accessibility, and high aesthetic polish.
+This project delivers a **modern, high-converting, fully responsive admissions landing page** for **EAK International School** (Academic Session 2027–28). Built strictly as a client-side frontend application using **React 19, JavaScript, Vite, and Tailwind CSS v4**, the application satisfies 100% of the project requirements across all **12 required sections** while providing fluid frontend interactions, accessibility, and high aesthetic polish.
 
 ### Primary Funnel Strategy
 $$\text{Inform} \longrightarrow \text{Build Trust} \longrightarrow \text{Answer Questions} \longrightarrow \text{Encourage Admission Enquiry}$$
@@ -39,7 +39,7 @@ $$\text{Inform} \longrightarrow \text{Build Trust} \longrightarrow \text{Answer 
 
 ## 🛠️ Technology Stack & Libraries Used
 
-- **Framework:** [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/) (Type-safe component architecture)
+- **Framework:** [React 19](https://react.dev/) + JavaScript (modular component architecture)
 - **Bundler:** [Vite 8.3](https://vite.dev/) (Lightning-fast HMR and optimized production bundling)
 - **Styling:** [Tailwind CSS v4](https://tailwindcss.com/) with `@tailwindcss/vite`
 - **Icons:** [Lucide React](https://lucide.dev/) (Crisp, modern SVG icons with full tree-shaking)
@@ -110,7 +110,7 @@ The page has been built and tested for optimal layout across:
 
 ## 📄 Evaluation Criteria Checklist
 
-- [x] **Frontend implementation quality and code structure (25%):** Clean modular components, TypeScript interfaces, separated data store, zero ESLint/TypeScript build errors.
+- [x] **Frontend implementation quality and code structure (25%):** Clean modular components, separated data store, and production build verification.
 - [x] **Completeness of required sections (20%):** All 12 requested sections implemented in logical order with accurate content and exact fee figures.
 - [x] **Responsive behavior across screen sizes (20%):** Tailwind responsive classes (`sm:`, `md:`, `lg:`, `xl:`) across every component.
 - [x] **Visual execution and consistency (15%):** Regal navy/gold/emerald educational palette, consistent spacing, typography hierarchy, and hover effects.

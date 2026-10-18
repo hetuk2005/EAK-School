@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # EAK International School
 
 A responsive admissions landing page for EAK International School's 2027–28 academic session. The site is built with React and JavaScript, with Vite for development and production builds and Tailwind CSS for styling.
@@ -58,3 +59,6 @@ src/
 ## Production build
 
 Run `npm run build`, then use `npm run preview` to inspect the generated site. The output is written to `dist/` and can be deployed to a static hosting service such as Vercel or Netlify.
+=======
+# EAK-School
+>>>>>>> 40c1b54ddab488a32b79428af3ffd2c8c6772e96
